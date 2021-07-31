@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD4yZGqeuuJOCg1Gdy5Njzl0xsQVomdNSE",
+            authDomain: "testwebsite-24c03.firebaseapp.com",
+            databaseURL: "https://testwebsite-24c03.firebaseio.com",
+            projectId: "testwebsite-24c03",
+            storageBucket: "testwebsite-24c03.appspot.com",
+            messagingSenderId: "677597481549",
+            appId: "1:677597481549:web:d57dd2a6730167d45faa04",
+            measurementId: "G-SK5HFBMM2N"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots: true})
+    
+    </script>
+    <script src = "auth.js" defer></script>
+    <script src="store.js" defer></script>
+
+</head>
+<body>
+    <center>
+    <section id="whenSignedOut">
+        <button id="signInButton" style = "height:40px;width:300px; font-size: 20px;background-color:rgb(61, 60, 68); color: white ">Sign in with Google</button>
+     </section>
+    </center>
+     <section id="whenSignedIn" hidden="true">
+        <hr>
+        <image width = 1520 height = 180 src = technology-banner-background-with-hexagonal-shapes-text-space_1017-22589.jpg ></image>
+        <hr>
+        <center> 
+        <h1 style="font-size: 30; font-family: Calibri"> TodoList</h1>
+        <div>
+           <input id="form_title" type = "text" placeholder="Title" style="height:40px;width:300px; font-size: 20px"><br><br>
+           <textarea id="form_content" style="height:180px;width:300px; font-size: 20px" placeholder="Content"></textarea><br><br>
+           <input type = "button" value="Add" style="height:40px;width:300px; font-size: 20px;background-color:rgb(29, 17, 104); color: white " onclick="addTodo()">
+       </div>  
+        <div class = "content" id="content_div">
+        </div>
+         <div id="userDetails"></div>
+         <button id="signOutButton">Sign Out</button>
+         </div> 
+        </center>
+
+     </section>
+
+    
+
+</body>
+</html> 
